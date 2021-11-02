@@ -1,6 +1,7 @@
 DerivedDataCache
 Intermediate
 .vs
+Saved/Logs/*.log
 
 # Prerequisites
 *.d
@@ -34,4 +35,3 @@ Intermediate
 *.exe
 *.out
 *.app
-Saved/Logs/GameOff2021.log

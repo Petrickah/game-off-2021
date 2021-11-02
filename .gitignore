@@ -1,3 +1,7 @@
+DerivedDataCache
+Intermediate
+.vs
+
 # Prerequisites
 *.d
 

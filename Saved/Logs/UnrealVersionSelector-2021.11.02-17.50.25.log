@@ -1,0 +1,327 @@
+Log.WriteLinePrivate: Note: Android toolchain NDK r21b recommended
+Log.WriteLinePrivate: Found Windows 10 SDK root at C:\Program Files (x86)\Windows Kits\10 (1)
+Log.WriteLinePrivate: Found Windows 10 SDK root at C:\Program Files (x86)\Windows Kits\10 (2)
+Log.WriteLinePrivate: Found Windows 10 SDK version 10.0.17763.0 at C:\Program Files (x86)\Windows Kits\10
+Log.WriteLinePrivate: Found Universal CRT version 10.0.17763.0 at C:\Program Files (x86)\Windows Kits\10
+Log.WriteLinePrivate: Win64 using Manual SDK 10.0.17763.0
+Log.WriteLinePrivate: 
+Log.WriteLinePrivate: ---   SDK INFO START   ---
+Log.WriteLinePrivate: WARNING: Unable to find a valid SDK for IOS. Must be between 1100.0.0.0 and 1299.0
+Log.WriteLinePrivate:            If your Studio has it set up, you can run this command to find the SDK to install:
+Log.WriteLinePrivate:              RunUAT Turnkey -command=InstallSdk -platform=IOS -BestAvailable
+Log.WriteLinePrivate: WARNING: Unable to find a valid SDK for Android. Must be between r21a and r23a
+Log.WriteLinePrivate:            If your Studio has it set up, you can run this command to find the SDK to install:
+Log.WriteLinePrivate:              RunUAT Turnkey -command=InstallSdk -platform=Android -BestAvailable
+Log.WriteLinePrivate: WARNING: Unable to find a valid SDK for Linux. Must be between v10_clang-5.0.0-centos7 and v17_clang-10.0.1-centos7
+Log.WriteLinePrivate:            If your Studio has it set up, you can run this command to find the SDK to install:
+Log.WriteLinePrivate:              RunUAT Turnkey -command=InstallSdk -platform=Linux -BestAvailable
+Log.WriteLinePrivate: WARNING: Unable to find a valid SDK for LinuxAArch64. Must be between v10_clang-5.0.0-centos7 and v17_clang-10.0.1-centos7
+Log.WriteLinePrivate:            If your Studio has it set up, you can run this command to find the SDK to install:
+Log.WriteLinePrivate:              RunUAT Turnkey -command=InstallSdk -platform=LinuxAArch64 -BestAvailable
+Log.WriteLinePrivate: 
+Log.WriteLinePrivate: Some Platforms were skipped due to invalid SDK setup: IOS, Android, Linux, LinuxAArch64.
+Log.WriteLinePrivate: See the log file for detailed information (C:\Users\Tiberiu\AppData\Local\UnrealBuildTool\Log_GPF.txt)
+Log.WriteLinePrivate: 
+Log.WriteLinePrivate: ---   SDK INFO END   ---
+Log.WriteLinePrivate: 
+Log.WriteLinePrivate: Discovering modules, targets and source code for project...
+Log.WriteLinePrivate: Found Visual Studio installation: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community (Product=Microsoft.VisualStudio.Product.Community, Version=16.11.31729.503)
+Log.WriteLinePrivate: Found Visual Studio toolchain: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133 (Family=14.29.30133, FamilyRank=1, Version=14.29.30136, Is64Bit=True, Preview=False, Error=False)
+Log.WriteLinePrivate: Skipping C:\Program Files\Epic Games\UE_5.0EA\Engine\Intermediate\Build\BuildRules\UE5Rules.dll: File is installed
+Log.WriteLinePrivate: Skipping C:\Program Files\Epic Games\UE_5.0EA\Engine\Intermediate\Build\BuildRules\UE5ProgramRules.dll: File is installed
+Log.WriteLinePrivate: Compiling C:\Users\Tiberiu\Desktop\Portofoliu\GameOff2021\Intermediate\Build\BuildRules\GameOff2021ModuleRules.dll: Assembly does not exist
+Log.PushStatus: Binding IntelliSense data...
+Log.WriteLinePrivate: @progress 'Binding IntelliSense data...' 0%
+Log.WriteLinePrivate: Enabling plugin 'Paper2D' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AISupport' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'EnvironmentQueryEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'Bridge' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'EditorScriptingUtilities' (referenced via default plugins -> Bridge.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'CameraShakePreviewer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GameplayCameras' (referenced via default plugins -> CameraShakePreviewer.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'TemplateSequence' (referenced via default plugins -> CameraShakePreviewer.uplugin -> GameplayCameras.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'LevelSequenceEditor' (referenced via default plugins -> CameraShakePreviewer.uplugin -> GameplayCameras.uplugin -> TemplateSequence.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AnimationSharing' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SignificanceManager' (referenced via default plugins -> AnimationSharing.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'CLionSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CodeLiteSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GitSourceControl' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'KDevelopSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'NullSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PerforceSourceControl' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PlasticSourceControl' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PluginUtils' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PropertyAccessNode' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PropertyAccessEditor' (referenced via default plugins -> PropertyAccessNode.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'RiderSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SubversionSourceControl' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'UObjectPlugin' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'VisualStudioCodeSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'VisualStudioSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'XCodeSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AssetManagerEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ContentBrowserAssetDataSource' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ContentBrowserClassDataSource' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CryptoKeys' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CurveEditorTools' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'DataValidation' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'EditorDebugTools' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'FacialAnimation' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GameplayTagsEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GeometryMode' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'InterchangeEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'Interchange' (referenced via default plugins -> InterchangeEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MacGraphicsSwitching' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MaterialAnalyzer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MobileLauncherProfileWizard' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PluginBrowser' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SpeedTreeImporter' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'DatasmithContent' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'VariantManagerContent' (referenced via default plugins -> DatasmithContent.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AlembicImporter' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GeometryCache' (referenced via default plugins -> AlembicImporter.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AutomationUtils' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ScreenshotTools' (referenced via default plugins -> AutomationUtils.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'BackChannel' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ChaosClothEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ChaosCloth' (referenced via default plugins -> ChaosClothEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ChaosEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PlanarCut' (referenced via default plugins -> ChaosEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'GeometryProcessing' (referenced via default plugins -> ChaosEditor.uplugin -> PlanarCut.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'GeometryCollectionPlugin' (referenced via default plugins -> ChaosEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ProceduralMeshComponent' (referenced via default plugins -> ChaosEditor.uplugin -> GeometryCollectionPlugin.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ChaosSolverPlugin' (referenced via default plugins -> ChaosEditor.uplugin -> GeometryCollectionPlugin.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MeshModelingToolset' (referenced via default plugins -> ChaosEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ProxyLODPlugin' (referenced via default plugins -> ChaosEditor.uplugin -> MeshModelingToolset.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'HairStrands' (referenced via default plugins -> ChaosEditor.uplugin -> MeshModelingToolset.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'Niagara' (referenced via default plugins -> ChaosEditor.uplugin -> MeshModelingToolset.uplugin -> HairStrands.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ChaosNiagara' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CharacterAI' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MotoSynth' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PlatformCrypto' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SkeletalReduction' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'LuminPlatformFeatures' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MLSDK' (referenced via default plugins -> LuminPlatformFeatures.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MagicLeapMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MagicLeap' (referenced via default plugins -> MagicLeapMedia.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MagicLeapPassableWorld' (referenced via default plugins -> MagicLeapMedia.uplugin -> MagicLeap.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MagicLeapLightEstimation' (referenced via default plugins -> MagicLeapMedia.uplugin -> MagicLeap.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AndroidMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AvfMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ImgMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MediaCompositing' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MediaPlayerEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'WmfMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MeshPainting' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'TcpMessaging' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'UdpMessaging' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ActorSequence' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MatineeToLevelSequence' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystemGooglePlay' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystem' (referenced via default plugins -> OnlineSubsystemGooglePlay.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AndroidPermission' (referenced via default plugins -> OnlineSubsystemGooglePlay.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystemIOS' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystemNull' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystemUtils' (referenced via default plugins -> OnlineSubsystemNull.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'LauncherChunkInstaller' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ActorLayerUtilities' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AndroidDeviceProfileSelector' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AndroidMoviePlayer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AppleImageUtils' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AppleMoviePlayer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ArchVisCharacter' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AssetTags' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AudioCapture' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CableComponent' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ChunkDownloader' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CustomMeshComponent' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ExampleDeviceProfileSelector' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GoogleCloudMessaging' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GooglePAD' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'IOSDeviceProfileSelector' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'LinuxDeviceProfileSelector' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'LocationServicesBPLibrary' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MobilePatchingUtils' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OculusVR' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'RuntimePhysXCooking' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SoundFields' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SteamVR' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'Synthesis' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AudioSynesthesia' (referenced via default plugins -> Synthesis.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'WebMMoviePlayer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'WebMMedia' (referenced via default plugins -> WebMMoviePlayer.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'WindowsMoviePlayer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'XGEController' (referenced via default plugins)
+Log.WriteLinePrivate: Compiler: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\cl.exe
+Log.WriteLinePrivate: Linker: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe
+Log.WriteLinePrivate: Library Manager: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\lib.exe
+Log.WriteLinePrivate: Resource Compiler: C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x64\rc.exe
+Log.WriteLinePrivate: @progress 'Binding IntelliSense data...' 50%
+Log.WriteLinePrivate: Enabling plugin 'Paper2D' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AISupport' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'EnvironmentQueryEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'Bridge' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'EditorScriptingUtilities' (referenced via default plugins -> Bridge.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'CameraShakePreviewer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GameplayCameras' (referenced via default plugins -> CameraShakePreviewer.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'TemplateSequence' (referenced via default plugins -> CameraShakePreviewer.uplugin -> GameplayCameras.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'LevelSequenceEditor' (referenced via default plugins -> CameraShakePreviewer.uplugin -> GameplayCameras.uplugin -> TemplateSequence.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AnimationSharing' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SignificanceManager' (referenced via default plugins -> AnimationSharing.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'CLionSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CodeLiteSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GitSourceControl' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'KDevelopSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'NullSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PerforceSourceControl' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PlasticSourceControl' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PluginUtils' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PropertyAccessNode' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PropertyAccessEditor' (referenced via default plugins -> PropertyAccessNode.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'RiderSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SubversionSourceControl' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'UObjectPlugin' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'VisualStudioCodeSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'VisualStudioSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'XCodeSourceCodeAccess' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AssetManagerEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ContentBrowserAssetDataSource' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ContentBrowserClassDataSource' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CryptoKeys' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CurveEditorTools' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'DataValidation' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'EditorDebugTools' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'FacialAnimation' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GameplayTagsEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GeometryMode' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'InterchangeEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'Interchange' (referenced via default plugins -> InterchangeEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MacGraphicsSwitching' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MaterialAnalyzer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MobileLauncherProfileWizard' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PluginBrowser' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SpeedTreeImporter' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'DatasmithContent' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'VariantManagerContent' (referenced via default plugins -> DatasmithContent.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AlembicImporter' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GeometryCache' (referenced via default plugins -> AlembicImporter.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AutomationUtils' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ScreenshotTools' (referenced via default plugins -> AutomationUtils.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'BackChannel' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ChaosClothEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ChaosCloth' (referenced via default plugins -> ChaosClothEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ChaosEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PlanarCut' (referenced via default plugins -> ChaosEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'GeometryProcessing' (referenced via default plugins -> ChaosEditor.uplugin -> PlanarCut.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'GeometryCollectionPlugin' (referenced via default plugins -> ChaosEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ProceduralMeshComponent' (referenced via default plugins -> ChaosEditor.uplugin -> GeometryCollectionPlugin.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ChaosSolverPlugin' (referenced via default plugins -> ChaosEditor.uplugin -> GeometryCollectionPlugin.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MeshModelingToolset' (referenced via default plugins -> ChaosEditor.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ProxyLODPlugin' (referenced via default plugins -> ChaosEditor.uplugin -> MeshModelingToolset.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'HairStrands' (referenced via default plugins -> ChaosEditor.uplugin -> MeshModelingToolset.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'Niagara' (referenced via default plugins -> ChaosEditor.uplugin -> MeshModelingToolset.uplugin -> HairStrands.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'ChaosNiagara' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CharacterAI' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MotoSynth' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'PlatformCrypto' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SkeletalReduction' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'LuminPlatformFeatures' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MLSDK' (referenced via default plugins -> LuminPlatformFeatures.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MagicLeapMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MagicLeap' (referenced via default plugins -> MagicLeapMedia.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MagicLeapPassableWorld' (referenced via default plugins -> MagicLeapMedia.uplugin -> MagicLeap.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'MagicLeapLightEstimation' (referenced via default plugins -> MagicLeapMedia.uplugin -> MagicLeap.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AndroidMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AvfMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ImgMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MediaCompositing' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MediaPlayerEditor' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'WmfMedia' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MeshPainting' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'TcpMessaging' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'UdpMessaging' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ActorSequence' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MatineeToLevelSequence' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystemGooglePlay' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystem' (referenced via default plugins -> OnlineSubsystemGooglePlay.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'AndroidPermission' (referenced via default plugins -> OnlineSubsystemGooglePlay.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystemIOS' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystemNull' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OnlineSubsystemUtils' (referenced via default plugins -> OnlineSubsystemNull.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'LauncherChunkInstaller' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ActorLayerUtilities' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AndroidDeviceProfileSelector' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AndroidMoviePlayer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AppleImageUtils' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AppleMoviePlayer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ArchVisCharacter' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AssetTags' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AudioCapture' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CableComponent' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ChunkDownloader' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'CustomMeshComponent' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'ExampleDeviceProfileSelector' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GoogleCloudMessaging' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'GooglePAD' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'IOSDeviceProfileSelector' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'LinuxDeviceProfileSelector' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'LocationServicesBPLibrary' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'MobilePatchingUtils' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'OculusVR' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'RuntimePhysXCooking' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SoundFields' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'SteamVR' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'Synthesis' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'AudioSynesthesia' (referenced via default plugins -> Synthesis.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'WebMMoviePlayer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'WebMMedia' (referenced via default plugins -> WebMMoviePlayer.uplugin)
+Log.WriteLinePrivate: Enabling plugin 'WindowsMoviePlayer' (referenced via default plugins)
+Log.WriteLinePrivate: Enabling plugin 'XGEController' (referenced via default plugins)
+Log.WriteLinePrivate: Compiler: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\cl.exe
+Log.WriteLinePrivate: Linker: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe
+Log.WriteLinePrivate: Library Manager: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\lib.exe
+Log.WriteLinePrivate: Resource Compiler: C:\Program Files (x86)\Windows Kits\10\bin\10.0.17763.0\x64\rc.exe
+Log.WriteLinePrivate: @progress 'Binding IntelliSense data...' 100%
+Log.PushStatus: Writing project files...
+Log.WriteLinePrivate: @progress 'Writing project files...' 0%
+Log.WriteLinePrivate: @progress 'Writing project files...' 33%
+Log.WriteLinePrivate: @progress 'Writing project files...' 67%
+Log.WriteLinePrivate: @progress 'Writing project files...' 100%
+Log.WriteLinePrivate: Timeline:
+Log.WriteLinePrivate: 
+Log.WriteLinePrivate: [ 0.000]
+Log.WriteLinePrivate: [ 0.000](+0.062) <unknown>
+Log.WriteLinePrivate: [ 0.062](+0.077) XmlConfig.ReadConfigFiles()
+Log.WriteLinePrivate: [ 0.140](+0.000) SingleInstanceMutex.Acquire()
+Log.WriteLinePrivate: [ 0.140](+0.102) UEBuildPlatform.RegisterPlatforms()
+Log.WriteLinePrivate:   0.141          [ 0.000](+0.049) Initializing InstalledPlatformInfo
+Log.WriteLinePrivate:   0.191          [ 0.050](+0.000) Querying types
+Log.WriteLinePrivate:   0.193          [ 0.052](+0.022) AndroidPlatformFactory
+Log.WriteLinePrivate:   0.215          [ 0.074](+0.000) HoloLensPlatformFactory
+Log.WriteLinePrivate:   0.216          [ 0.075](+0.012) IOSPlatformFactory
+Log.WriteLinePrivate:   0.229          [ 0.088](+0.002) LinuxPlatformFactory
+Log.WriteLinePrivate:   0.231          [ 0.090](+0.000) LuminPlatformFactory
+Log.WriteLinePrivate:   0.231          [ 0.090](+0.000) MacPlatformFactory
+Log.WriteLinePrivate:   0.231          [ 0.090](+0.000) TVOSPlatformFactory
+Log.WriteLinePrivate:   0.231          [ 0.090](+0.011) WindowsPlatformFactory
+Log.WriteLinePrivate: [ 0.243](+0.436) <unknown>
+Log.WriteLinePrivate: [ 0.679](+0.006) Finding engine modules
+Log.WriteLinePrivate: [ 0.685](+0.002) Finding plugin modules
+Log.WriteLinePrivate: [ 0.688](+0.038) <unknown>
+Log.WriteLinePrivate: [ 0.726](+0.000) Finding program modules
+Log.WriteLinePrivate: [ 0.726](+0.000) Finding program targets
+Log.WriteLinePrivate: [ 0.726](+0.051) <unknown>
+Log.WriteLinePrivate: [ 0.777](+1.426) Compiling rules assembly (GameOff2021ModuleRules.dll)
+Log.WriteLinePrivate: [ 2.204](+0.960) <unknown>
+Log.WriteLinePrivate: [ 3.164](+0.000) RulesCompiler.CreateTargetRulesAssembly()
+Log.WriteLinePrivate: [ 3.164](+0.001) RulesAssembly.CreateTargetRules()
+Log.WriteLinePrivate: [ 3.171](+0.005) UEBuildTarget constructor
+Log.WriteLinePrivate: [ 3.177](+0.914) UEBuildTarget.PreBuildSetup()
+Log.WriteLinePrivate: [ 4.091](+0.593) <unknown>
+Log.WriteLinePrivate: [ 4.685](+0.000) RulesCompiler.CreateTargetRulesAssembly()
+Log.WriteLinePrivate: [ 4.685](+0.001) RulesAssembly.CreateTargetRules()
+Log.WriteLinePrivate: [ 4.688](+0.000) UEBuildTarget constructor
+Log.WriteLinePrivate: [ 4.688](+0.148) UEBuildTarget.PreBuildSetup()
+Log.WriteLinePrivate: [ 4.837](+2.545) <unknown>
+Log.WriteLinePrivate: [ 7.382](+0.000) FileMetadataPrefetch.Stop()
+Log.WriteLinePrivate: [ 7.386]

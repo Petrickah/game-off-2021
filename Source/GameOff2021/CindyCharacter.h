@@ -14,13 +14,26 @@ class GAMEOFF2021_API ACindyCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ACindyCharacter();
+	
+	class UCharacterMovementComponent* CharacterMovement;
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void Sprint(bool IsSprinting);
 
-	class USpringArmComponent* CameraBoom;
+	UFUNCTION(BlueprintImplementableEvent)
+	void ToggleCrouch(bool IsCrouching);
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	UPROPERTY(EditAnywhere, Category="Movement")
+	float NormalWalkSpeed;
+
+	UPROPERTY(EditAnywhere, Category="Movement")
+	float SprintWalkSpeed;
+
+	bool Sprinting, Crouching;
 
 public:	
 	// Called every frame
@@ -29,4 +42,8 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	void MoveForward(float AxisValue);
+	void MoveRight(float AxisValue);
+	void OnSprintEvent();
+	void OnCrouchEvent();
 };

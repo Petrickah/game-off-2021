@@ -11,6 +11,9 @@ class GAMEOFF2021_API ACindyCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
+	float fCurrentTimer;
+	bool bHasStaffEquipping = false, bDisableMovement = false;
+
 public:
 	// Sets default values for this character's properties
 	ACindyCharacter();
@@ -23,6 +26,27 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void ToggleCrouch(bool IsCrouching);
 
+	UFUNCTION(BlueprintImplementableEvent)
+	void EquipStaff(bool HasStaff);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void EquippingStaff(float DeltaTime);
+
+	UFUNCTION(BlueprintCallable)
+	void FreezeMovement(float DeltaTime, float Duration);
+
+	UFUNCTION(BlueprintPure)
+	float GetDisableMovementDuration();
+
+	UFUNCTION(BlueprintPure)
+	bool IsMovementDisabled();
+
+	UFUNCTION(BlueprintCallable)
+	void StopEquippingStaff();
+
+	UFUNCTION(BlueprintCallable)
+	void ToggleEquippedStaff(class USkeletalMeshComponent* Staff);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -33,7 +57,10 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Movement")
 	float SprintWalkSpeed;
 
-	bool Sprinting, Crouching;
+	UPROPERTY(EditAnywhere, Category = "Movement")
+	float DisableMovementDuration = 2.0f;
+
+	bool Sprinting, Crouching, StaffEquiped = false;
 
 public:	
 	// Called every frame
@@ -44,6 +71,8 @@ public:
 
 	void MoveForward(float AxisValue);
 	void MoveRight(float AxisValue);
+	void OnJump();
 	void OnSprintEvent();
 	void OnCrouchEvent();
+	void OnStaffEquipped();
 };

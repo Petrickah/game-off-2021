@@ -1,8 +1,8 @@
 DerivedDataCache
 Intermediate
 Binaries
+Saved
 .vs
-Saved/Logs/*.log
 
 # Prerequisites
 *.d

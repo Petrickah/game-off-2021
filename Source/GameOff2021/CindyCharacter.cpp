@@ -26,6 +26,28 @@ void ACindyCharacter::BeginPlay()
 void ACindyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (StaffEquiped && bHasStaffEquipping) {
+		EquippingStaff(DeltaTime);
+	}
+}
+
+void ACindyCharacter::ToggleEquippedStaff(USkeletalMeshComponent* Staff) {
+	if (StaffEquiped) {
+		Staff->SetVisibility(false);
+		if (!Crouching) Staff->SetVisibility(true);
+	}
+}
+
+float ACindyCharacter::GetDisableMovementDuration() {
+	return DisableMovementDuration;
+}
+
+bool ACindyCharacter::IsMovementDisabled() {
+	return bDisableMovement;
+}
+
+void ACindyCharacter::StopEquippingStaff() {
+	bHasStaffEquipping = false;
 }
 
 // Called to bind functionality to input
@@ -38,7 +60,7 @@ void ACindyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAxis("LookUp", this, &ACindyCharacter::AddControllerPitchInput);
 	PlayerInputComponent->BindAxis("Turn", this, &ACindyCharacter::AddControllerYawInput);
 
-	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACindyCharacter::Jump);
+	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACindyCharacter::OnJump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACindyCharacter::StopJumping);
 	
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &ACindyCharacter::OnSprintEvent);
@@ -46,17 +68,28 @@ void ACindyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ACindyCharacter::OnCrouchEvent);
 	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &ACindyCharacter::OnCrouchEvent);
+
+	PlayerInputComponent->BindAction("EquipStaff", IE_Pressed, this, &ACindyCharacter::OnStaffEquipped);
 }
 
 void ACindyCharacter::MoveForward(float AxisValue)
 {
 	FVector forwardVector = GetActorForwardVector();
-	AddMovementInput(forwardVector, AxisValue);
+	if (AxisValue < 0) CharacterMovement->MaxWalkSpeed = this->NormalWalkSpeed;
+	else if (this->Sprinting) CharacterMovement->MaxWalkSpeed = this->SprintWalkSpeed;
+	if(!bDisableMovement) AddMovementInput(forwardVector, AxisValue);
 }
 
 void ACindyCharacter::MoveRight(float AxisValue) {
 	FVector rightVector = GetActorRightVector();
-	AddMovementInput(rightVector, AxisValue);
+	if (!bDisableMovement) AddMovementInput(rightVector, AxisValue);
+}
+
+void ACindyCharacter::OnJump() {
+	if (bDisableMovement) return;
+
+	bool falling = CharacterMovement->IsFalling();
+	if (!falling) Jump();
 }
 
 void ACindyCharacter::OnSprintEvent()
@@ -72,9 +105,35 @@ void ACindyCharacter::OnSprintEvent()
 
 void ACindyCharacter::OnCrouchEvent()
 {
+	if (bDisableMovement) return;
 	Crouching = Crouching ? false : true;
 	float walkSpeed = Crouching ? CharacterMovement->MaxWalkSpeedCrouched : NormalWalkSpeed;
 	CharacterMovement->MaxWalkSpeed = walkSpeed;
 
 	ToggleCrouch(Crouching);
+}
+
+void ACindyCharacter::OnStaffEquipped() {
+	if (Sprinting) return;
+	if (Crouching) return;
+	if (CharacterMovement->IsFalling()) return;
+
+	if (!StaffEquiped) 
+		bHasStaffEquipping = true;
+
+	StaffEquiped = !(StaffEquiped) ? true : false;
+	EquipStaff(StaffEquiped);
+}
+
+void ACindyCharacter::FreezeMovement(float DeltaTime, float Duration) {
+	if (fCurrentTimer <= 0) {
+		fCurrentTimer = Duration;
+		bDisableMovement = true;
+	}
+	else {
+		fCurrentTimer -= DeltaTime;
+		if (fCurrentTimer < 0) {
+			bDisableMovement = false;
+		}
+	}
 }

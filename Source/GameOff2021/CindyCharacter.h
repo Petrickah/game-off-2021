@@ -12,13 +12,17 @@ class GAMEOFF2021_API ACindyCharacter : public ACharacter
 	GENERATED_BODY()
 
 	float fCurrentTimer;
-	bool bHasStaffEquipping = false, bDisableMovement = false;
+	bool bDisableMovement = false;
 
 public:
 	// Sets default values for this character's properties
 	ACindyCharacter();
 	
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Components")
+	class UAttackingSystemComponent* AttackingSystem;
+
 	class UCharacterMovementComponent* CharacterMovement;
+	class UCindyAnimator* CindyAnimator;
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void Sprint(bool IsSprinting);
@@ -26,26 +30,8 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void ToggleCrouch(bool IsCrouching);
 
-	UFUNCTION(BlueprintImplementableEvent)
-	void EquipStaff(bool HasStaff);
-
-	UFUNCTION(BlueprintImplementableEvent)
-	void EquippingStaff(float DeltaTime);
-
 	UFUNCTION(BlueprintCallable)
-	void FreezeMovement(float DeltaTime, float Duration);
-
-	UFUNCTION(BlueprintPure)
-	float GetDisableMovementDuration();
-
-	UFUNCTION(BlueprintPure)
-	bool IsMovementDisabled();
-
-	UFUNCTION(BlueprintCallable)
-	void StopEquippingStaff();
-
-	UFUNCTION(BlueprintCallable)
-	void ToggleEquippedStaff(class USkeletalMeshComponent* Staff);
+	inline void StopMovement(bool IsStopped) { bDisableMovement = IsStopped; }
 
 protected:
 	// Called when the game starts or when spawned
@@ -57,12 +43,9 @@ protected:
 	UPROPERTY(EditAnywhere, Category="Movement")
 	float SprintWalkSpeed;
 
-	UPROPERTY(EditAnywhere, Category = "Movement")
-	float DisableMovementDuration = 2.0f;
-
-	bool Sprinting, Crouching, StaffEquiped = false;
-
 public:	
+	bool Sprinting, Crouching;
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
@@ -75,4 +58,9 @@ public:
 	void OnSprintEvent();
 	void OnCrouchEvent();
 	void OnStaffEquipped();
+
+	bool CanUseStaff();
+	void EquipStaff();
+	void OnAttack();
+	void OnSecondaryAttack();
 };

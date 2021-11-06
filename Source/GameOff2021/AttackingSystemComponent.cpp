@@ -2,6 +2,7 @@
 
 
 #include "AttackingSystemComponent.h"
+#include "CindyAnimator.h"
 #include "CindyCharacter.h"
 
 // Sets default values for this component's properties
@@ -28,14 +29,23 @@ void UAttackingSystemComponent::TickComponent(float DeltaTime, ELevelTick TickTy
 
 }
 
+void UAttackingSystemComponent::OnSpellCast(ESpellType SpellType) {
+	if(!CastingSpell) {
+		CastingSpell = true;
+		CastSpell.Broadcast(SpellType);
+	}
+	else CastingSpell = false;
+
+	CindyCharacter->CindyAnimator->CastSpellEvent(SpellType, CastingSpell);
+	
+}
+
 void UAttackingSystemComponent::OnEquipStaff() {
 	if (!CindyCharacter->CanUseStaff()) return;
 	if (!StaffEquiped) {
-		EquipStaff.Broadcast(true);
 		EquippingStaff.Broadcast();
 		StaffEquiped = true;
-	}
-	else StaffEquiped = false;
+	} else StaffEquiped = false;
 	EquipStaff.Broadcast(StaffEquiped);
 }
 

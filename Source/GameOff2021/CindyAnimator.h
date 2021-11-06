@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SpellType.h"
 #include "Animation/AnimInstance.h"
 #include "CindyCharacter.h"
 
@@ -29,6 +30,9 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void AttackEvent(bool IsAttacking, bool ReadyToAttack);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void CastSpellEvent(ESpellType SpellType, bool IsCastingSpell);
 
 	UFUNCTION(BlueprintCallable)
 	void GetVelocityAxis(ACindyCharacter* CindyCharacter, float& Forward, float& Right);

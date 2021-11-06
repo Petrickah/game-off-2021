@@ -52,15 +52,23 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	// Movement
 	void MoveForward(float AxisValue);
 	void MoveRight(float AxisValue);
 	void OnJump();
 	void OnSprintEvent();
 	void OnCrouchEvent();
-	void OnStaffEquipped();
 
+	// Attack
+	void OnStaffEquipped();
 	bool CanUseStaff();
 	void EquipStaff();
 	void OnAttack();
 	void OnSecondaryAttack();
+
+	// Spell Casting
+	void FireSpell();
+	void WaterSpell();
+	void IceSpell();
+	void EarthSpell();
 };

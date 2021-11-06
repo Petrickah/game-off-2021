@@ -1,7 +1,7 @@
 DerivedDataCache
 Intermediate
 Binaries
-Saved
+Saved/**
 .vs
 .vscode
 

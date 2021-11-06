@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SpellType.h"
 #include "Components/ActorComponent.h"
 #include "AttackingSystemComponent.generated.h"
 
@@ -27,7 +28,7 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
-	bool StaffEquiped, Attacking;
+	bool StaffEquiped, Attacking, CastingSpell;
 
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
@@ -47,11 +48,18 @@ public:
 	UPROPERTY(BlueprintAssignable, Category = "Events")
 	FAttack SecondaryAttack;
 
+	DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSpellCast, ESpellType, SpellType);
+	UPROPERTY(BlueprintAssignable, Category = "Events")
+	FSpellCast CastSpell;
+
 	UFUNCTION(BlueprintCallable)
 	void OnEquipStaff();
 
 	UFUNCTION(BlueprintCallable)
 	void OnAttack(bool IsPrimary);
+	
+	UFUNCTION(BlueprintCallable)
+	void OnSpellCast(ESpellType SpellType);
 
 	UFUNCTION(BlueprintCallable)
 	void ToggleEquippedStaff(class USkeletalMeshComponent* Staff);

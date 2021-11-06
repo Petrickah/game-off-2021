@@ -74,14 +74,12 @@ void ACindyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAxis("Turn", this, &ACindyCharacter::AddControllerYawInput);
 
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACindyCharacter::OnJump);
-	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACindyCharacter::OnJump);
+	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACindyCharacter::StopJumping);
 	
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &ACindyCharacter::OnSprintEvent);
 	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &ACindyCharacter::OnSprintEvent);
 
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ACindyCharacter::OnCrouchEvent);
-	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &ACindyCharacter::OnCrouchEvent);
-
 	PlayerInputComponent->BindAction("EquipStaff", IE_Pressed, this, &ACindyCharacter::EquipStaff);
 
 	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &ACindyCharacter::OnAttack);
@@ -89,6 +87,32 @@ void ACindyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 
 	PlayerInputComponent->BindAction("SecondaryAttack", IE_Pressed, this, &ACindyCharacter::OnSecondaryAttack);
 	PlayerInputComponent->BindAction("SecondaryAttack", IE_Released, this, &ACindyCharacter::OnSecondaryAttack);
+
+	PlayerInputComponent->BindAction("SpellCast_Fire", IE_Pressed, this, &ACindyCharacter::FireSpell);
+	PlayerInputComponent->BindAction("SpellCast_Water", IE_Pressed, this, &ACindyCharacter::WaterSpell);
+	PlayerInputComponent->BindAction("SpellCast_Ice", IE_Pressed, this, &ACindyCharacter::IceSpell);
+	PlayerInputComponent->BindAction("SpellCast_Earth", IE_Pressed, this, &ACindyCharacter::EarthSpell);
+
+	PlayerInputComponent->BindAction("SpellCast_Fire", IE_Released, this, &ACindyCharacter::FireSpell);
+	PlayerInputComponent->BindAction("SpellCast_Water", IE_Released, this, &ACindyCharacter::WaterSpell);
+	PlayerInputComponent->BindAction("SpellCast_Ice", IE_Released, this, &ACindyCharacter::IceSpell);
+	PlayerInputComponent->BindAction("SpellCast_Earth", IE_Released, this, &ACindyCharacter::EarthSpell);
+}
+
+void ACindyCharacter::FireSpell() {
+	AttackingSystem->OnSpellCast(ESpellType::Fire);
+}
+
+void ACindyCharacter::WaterSpell() {
+	AttackingSystem->OnSpellCast(ESpellType::Water);
+}
+
+void ACindyCharacter::IceSpell() {
+	AttackingSystem->OnSpellCast(ESpellType::Ice);
+}
+
+void ACindyCharacter::EarthSpell() {
+	AttackingSystem->OnSpellCast(ESpellType::Earth);
 }
 
 void ACindyCharacter::MoveForward(float AxisValue)
@@ -110,10 +134,7 @@ void ACindyCharacter::MoveRight(float AxisValue) {
 
 void ACindyCharacter::OnJump() {
 	if (bDisableMovement) return;
-
-	bool falling = CharacterMovement->IsFalling();
-	if (!falling) Jump();
-	else StopJumping();
+	if (!CharacterMovement->IsFalling()) Jump();
 }
 
 void ACindyCharacter::OnSprintEvent()

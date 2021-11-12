@@ -17,12 +17,15 @@ class GAMEOFF2021_API ACindyCharacter : public ACharacter
 public:
 	// Sets default values for this character's properties
 	ACindyCharacter();
-	
+
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere, Category = "Components")
-	class UAttackingSystemComponent* AttackingSystem;
+	UChildActorComponent* MagicCircle;
 
 	class UCharacterMovementComponent* CharacterMovement;
 	class UCindyAnimator* CindyAnimator;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void Walk(bool IsWalking);
 
 	UFUNCTION(BlueprintImplementableEvent)
 	void Sprint(bool IsSprinting);
@@ -32,6 +35,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	inline void StopMovement(bool IsStopped) { bDisableMovement = IsStopped; }
+
 
 protected:
 	// Called when the game starts or when spawned
@@ -60,11 +64,8 @@ public:
 	void OnCrouchEvent();
 
 	// Attack
-	void OnStaffEquipped();
+	UFUNCTION(BlueprintPure)
 	bool CanUseStaff();
-	void EquipStaff();
-	void OnAttack();
-	void OnSecondaryAttack();
 
 	// Spell Casting
 	void FireSpell();

@@ -29,10 +29,7 @@ public:
 	void CrouchEvent(bool IsCrouching);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	void AttackEvent(bool IsAttacking, bool ReadyToAttack);
-
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
-	void CastSpellEvent(ESpellType SpellType, bool IsCastingSpell);
+	void AttackEvent(bool ReadyToAttack);
 
 	UFUNCTION(BlueprintCallable)
 	void GetVelocityAxis(ACindyCharacter* CindyCharacter, float& Forward, float& Right);

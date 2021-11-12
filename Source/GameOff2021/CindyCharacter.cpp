@@ -3,7 +3,6 @@
 
 #include "CindyCharacter.h"
 #include "CindyAnimator.h"
-#include "AttackingSystemComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 // Sets default values
@@ -17,8 +16,6 @@ ACindyCharacter::ACindyCharacter()
 	CharacterMovement->MaxWalkSpeed = NormalWalkSpeed;
 	CharacterMovement->MaxWalkSpeedCrouched = 300;
 	CindyAnimator = nullptr;
-
-	AttackingSystem = CreateDefaultSubobject<UAttackingSystemComponent>(FName("AttackingSystem"));
 }
 
 // Called when the game starts or when spawned
@@ -36,11 +33,14 @@ void ACindyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
-	CindyAnimator->WalkEvent();
+	if(!bDisableMovement) {
+		CindyAnimator->WalkEvent();
+		Walk(CharacterMovement->Velocity.Size() > 0.1f);
+		Sprint(Sprinting);
+	}
 
 	CindyAnimator->JumpEvent(CharacterMovement->IsFalling());
 	CindyAnimator->CrouchEvent(Crouching);
-	CindyAnimator->AttackEvent(AttackingSystem->Attacking, AttackingSystem->StaffEquiped);
 }
 
 bool ACindyCharacter::CanUseStaff() {
@@ -49,18 +49,6 @@ bool ACindyCharacter::CanUseStaff() {
 	if (CharacterMovement->IsFalling()) return false;
 
 	return true;
-}
-
-void ACindyCharacter::EquipStaff() {
-	AttackingSystem->OnEquipStaff();
-}
-
-void ACindyCharacter::OnAttack() {
-	AttackingSystem->OnAttack(true);
-}
-
-void ACindyCharacter::OnSecondaryAttack() {
-	AttackingSystem->OnAttack(false);
 }
 
 // Called to bind functionality to input
@@ -78,15 +66,8 @@ void ACindyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	
 	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &ACindyCharacter::OnSprintEvent);
 	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &ACindyCharacter::OnSprintEvent);
-
+	
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ACindyCharacter::OnCrouchEvent);
-	PlayerInputComponent->BindAction("EquipStaff", IE_Pressed, this, &ACindyCharacter::EquipStaff);
-
-	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &ACindyCharacter::OnAttack);
-	PlayerInputComponent->BindAction("Attack", IE_Released, this, &ACindyCharacter::OnAttack);
-
-	PlayerInputComponent->BindAction("SecondaryAttack", IE_Pressed, this, &ACindyCharacter::OnSecondaryAttack);
-	PlayerInputComponent->BindAction("SecondaryAttack", IE_Released, this, &ACindyCharacter::OnSecondaryAttack);
 
 	PlayerInputComponent->BindAction("SpellCast_Fire", IE_Pressed, this, &ACindyCharacter::FireSpell);
 	PlayerInputComponent->BindAction("SpellCast_Water", IE_Pressed, this, &ACindyCharacter::WaterSpell);
@@ -100,19 +81,19 @@ void ACindyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 }
 
 void ACindyCharacter::FireSpell() {
-	AttackingSystem->OnSpellCast(ESpellType::Fire);
+	//AttackingSystem->OnSpellCast(ESpellType::Fire);
 }
 
 void ACindyCharacter::WaterSpell() {
-	AttackingSystem->OnSpellCast(ESpellType::Water);
+	//AttackingSystem->OnSpellCast(ESpellType::Water);
 }
 
 void ACindyCharacter::IceSpell() {
-	AttackingSystem->OnSpellCast(ESpellType::Ice);
+	//AttackingSystem->OnSpellCast(ESpellType::Ice);
 }
 
 void ACindyCharacter::EarthSpell() {
-	AttackingSystem->OnSpellCast(ESpellType::Earth);
+	//AttackingSystem->OnSpellCast(ESpellType::Earth);
 }
 
 void ACindyCharacter::MoveForward(float AxisValue)

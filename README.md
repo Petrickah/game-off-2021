@@ -6,3 +6,5 @@
  Hair Material (MizuGames): https://forums.unrealengine.com/t/free-hair-material/24782
 
  FurryS2 Character (Quang Phan): https://www.unrealengine.com/marketplace/en-US/product/furrys2-sorcerer-and-archer
+
+ Free Spider 3D Model (3dhaupt): https://c4ddownload.com/animated-spider-free-3d-model/

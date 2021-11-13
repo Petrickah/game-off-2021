@@ -68,32 +68,6 @@ void ACindyCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComp
 	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &ACindyCharacter::OnSprintEvent);
 	
 	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ACindyCharacter::OnCrouchEvent);
-
-	PlayerInputComponent->BindAction("SpellCast_Fire", IE_Pressed, this, &ACindyCharacter::FireSpell);
-	PlayerInputComponent->BindAction("SpellCast_Water", IE_Pressed, this, &ACindyCharacter::WaterSpell);
-	PlayerInputComponent->BindAction("SpellCast_Ice", IE_Pressed, this, &ACindyCharacter::IceSpell);
-	PlayerInputComponent->BindAction("SpellCast_Earth", IE_Pressed, this, &ACindyCharacter::EarthSpell);
-
-	PlayerInputComponent->BindAction("SpellCast_Fire", IE_Released, this, &ACindyCharacter::FireSpell);
-	PlayerInputComponent->BindAction("SpellCast_Water", IE_Released, this, &ACindyCharacter::WaterSpell);
-	PlayerInputComponent->BindAction("SpellCast_Ice", IE_Released, this, &ACindyCharacter::IceSpell);
-	PlayerInputComponent->BindAction("SpellCast_Earth", IE_Released, this, &ACindyCharacter::EarthSpell);
-}
-
-void ACindyCharacter::FireSpell() {
-	//AttackingSystem->OnSpellCast(ESpellType::Fire);
-}
-
-void ACindyCharacter::WaterSpell() {
-	//AttackingSystem->OnSpellCast(ESpellType::Water);
-}
-
-void ACindyCharacter::IceSpell() {
-	//AttackingSystem->OnSpellCast(ESpellType::Ice);
-}
-
-void ACindyCharacter::EarthSpell() {
-	//AttackingSystem->OnSpellCast(ESpellType::Earth);
 }
 
 void ACindyCharacter::MoveForward(float AxisValue)

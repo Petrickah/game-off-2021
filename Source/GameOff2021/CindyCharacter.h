@@ -66,10 +66,4 @@ public:
 	// Attack
 	UFUNCTION(BlueprintPure)
 	bool CanUseStaff();
-
-	// Spell Casting
-	void FireSpell();
-	void WaterSpell();
-	void IceSpell();
-	void EarthSpell();
 };

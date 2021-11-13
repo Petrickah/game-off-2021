@@ -62,12 +62,14 @@ void AMagicalStaff::Attack_Implementation(ACindyCharacter* StaffOwner, UAnimMont
 	}
 }
 
-void AMagicalStaff::CastSpell_Implementation(ACindyCharacter* StaffOwner, ESpellType SpellType) {
+void AMagicalStaff::CastSpell_Implementation(ACindyCharacter* StaffOwner, ESpellType SpellType, float ManaNeeded) {
 	if (!IsStaffEquiped) return;
 	if (!IsCasting) {
-		UAnimInstance* AnimInstance = StaffOwner->GetMesh()->GetAnimInstance();
-		if (!AnimInstance->IsAnyMontagePlaying()) {
-			StaffOwner->StopMovement(true);
+		if (!OnCooldown) {
+			UAnimInstance* AnimInstance = StaffOwner->GetMesh()->GetAnimInstance();
+			if (!AnimInstance->IsAnyMontagePlaying()) {
+				StaffOwner->StopMovement(true);
+			}
 		}
 		IsCasting = true;
 	}
@@ -93,6 +95,12 @@ void AMagicalStaff::BeginPlay()
 void AMagicalStaff::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	if (OnCooldown) {
+		fCooldownTimer -= fCooldownTimer * DeltaTime;
+		if (fCooldownTimer <= 0.1f) {
+			fCooldownTimer = CooldownTime;
+			OnCooldown = false;
+		}
+	}
 }
 

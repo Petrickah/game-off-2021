@@ -21,7 +21,9 @@ public:
 	class USkeletalMeshComponent* StaffMesh;
 
 protected:
-	float fCooldownTimer = 5.0f;
+
+	UPROPERTY(BLueprintReadWrite, VisibleAnywhere)
+	float CooldownTimer = 0.0f;
 
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -37,9 +39,6 @@ protected:
 
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	bool OnCooldown = false;
-
-	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-	float CooldownTime = 5.0f;
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	void DestroyEffect(ACindyCharacter* StaffOwner);
@@ -70,7 +69,7 @@ public:
 	void Attack(ACindyCharacter* StaffOwner, UAnimMontage* AnimMontage, bool IsPrimary = true);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void CastSpell(ACindyCharacter* StaffOwner, ESpellType SpellType, float ManaNeeded);
+	void CastSpell(ACindyCharacter* StaffOwner, ESpellType SpellType, float ManaNeeded, float Cooldown);
 
 	UFUNCTION(BlueprintPure)
 	FTransform GetRelativeTransform(class USkeletalMeshComponent* SKMesh, class USpringArmComponent* CameraBoom);

@@ -1,7 +1,9 @@
 DerivedDataCache
 Intermediate
+Binaries
+Saved/**
 .vs
-Saved/Logs/*.log
+.vscode
 
 # Prerequisites
 *.d

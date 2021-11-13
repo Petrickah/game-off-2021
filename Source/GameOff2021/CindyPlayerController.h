@@ -22,9 +22,13 @@ public:
 	UPlayerWidget* PlayerUIWidget;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mana")
-	float ManageableMana = 20.f;
+	float ManageableMana = 20.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Mana")
+	float ManaRegenerationRate = 1.2f;
 
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
 	bool ReadMana(float& ManaPool);

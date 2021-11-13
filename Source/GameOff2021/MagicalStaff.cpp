@@ -62,7 +62,7 @@ void AMagicalStaff::Attack_Implementation(ACindyCharacter* StaffOwner, UAnimMont
 	}
 }
 
-void AMagicalStaff::CastSpell_Implementation(ACindyCharacter* StaffOwner, ESpellType SpellType, float ManaNeeded) {
+void AMagicalStaff::CastSpell_Implementation(ACindyCharacter* StaffOwner, ESpellType SpellType, float ManaNeeded, float Cooldown) {
 	if (!IsStaffEquiped) return;
 	if (!IsCasting) {
 		if (!OnCooldown) {
@@ -96,9 +96,9 @@ void AMagicalStaff::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	if (OnCooldown) {
-		fCooldownTimer -= fCooldownTimer * DeltaTime;
-		if (fCooldownTimer <= 0.1f) {
-			fCooldownTimer = CooldownTime;
+		CooldownTimer -= CooldownTimer * DeltaTime;
+		if (CooldownTimer <= 0.1f) {
+			CooldownTimer = 0;
 			OnCooldown = false;
 		}
 	}

@@ -17,6 +17,11 @@ void ACindyPlayerController::BeginPlay() {
 	}
 }
 
+void ACindyPlayerController::Tick(float DeltaTime) {
+	Super::Tick(DeltaTime);
+	PlayerUIWidget->RegenerateMana(ManaRegenerationRate * DeltaTime);
+}
+
 bool ACindyPlayerController::ReadMana(float& ManaPool) {
 	if (PlayerUIWidget->CurrentMana > ManageableMana) {
 		ManaPool = PlayerUIWidget->CurrentMana;

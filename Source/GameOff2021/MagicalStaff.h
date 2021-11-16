@@ -20,6 +20,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	class USkeletalMeshComponent* StaffMesh;
 
+	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
+	class USphereComponent* StaffTrigger;
+
 protected:
 
 	UPROPERTY(BLueprintReadWrite, VisibleAnywhere)
@@ -50,6 +53,11 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	inline void SetOnCooldown(bool bOnCooldown, float fCooldownTimer) { 
+		OnCooldown = bOnCooldown; 
+		CooldownTimer = fCooldownTimer; 
+	}
+
 	UFUNCTION(BlueprintCallable)
 	void SetStaffVisibility(bool Visibility);
 
@@ -69,7 +77,7 @@ public:
 	void Attack(ACindyCharacter* StaffOwner, UAnimMontage* AnimMontage, bool IsPrimary = true);
 
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void CastSpell(ACindyCharacter* StaffOwner, ESpellType SpellType, float ManaNeeded, float Cooldown);
+	void CastSpell(ACindyCharacter* StaffOwner, ESpellType SpellType);
 
 	UFUNCTION(BlueprintPure)
 	FTransform GetRelativeTransform(class USkeletalMeshComponent* SKMesh, class USpringArmComponent* CameraBoom);

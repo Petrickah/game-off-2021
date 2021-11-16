@@ -3,6 +3,7 @@
 
 #include "MagicalStaff.h"
 #include "CindyAnimator.h"
+#include "Components/SphereComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
@@ -13,10 +14,18 @@ AMagicalStaff::AMagicalStaff()
 
 	StaffMesh = CreateDefaultSubobject<USkeletalMeshComponent>(FName("StaffMesh"));
 	StaffMesh->AttachToComponent(RootComponent, FAttachmentTransformRules(EAttachmentRule::KeepRelative, false));
+
+	StaffTrigger = CreateDefaultSubobject<USphereComponent>(FName("SphereCollision"));
+	StaffTrigger->AttachToComponent(StaffMesh, FAttachmentTransformRules(EAttachmentRule::KeepRelative, false));
+
+	StaffTrigger->SetSphereRadius(32.0f);
+	StaffTrigger->SetCollisionProfileName(FName("OverlapAllDynamic"));
+	StaffTrigger->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	StaffTrigger->SetRelativeLocation(FVector(0.0f, 0.0f, 52.5f));
 }
 
 void AMagicalStaff::SetStaffVisibility(bool Visibility) {
-	StaffMesh->SetVisibility(Visibility, true);
+	SetActorHiddenInGame(!Visibility);
 }
 
 FTransform AMagicalStaff::GetRelativeTransform(USkeletalMeshComponent* SKMesh, USpringArmComponent* CameraBoom) {
@@ -26,20 +35,23 @@ FTransform AMagicalStaff::GetRelativeTransform(USkeletalMeshComponent* SKMesh, U
 }
 
 void AMagicalStaff::EquipStaff_Implementation(ACindyCharacter* StaffOwner) {
-	this->SetStaffVisibility(!IsStaffEquiped);
-	if (!IsStaffEquiped) {
-		EquippingStaff(StaffOwner);
-		FTransform OwnerRelativeTransform = StaffOwner->GetRootComponent()->GetRelativeTransform();
-		FTransform SpellEffectTransform = FTransform(
-			OwnerRelativeTransform.GetRotation(),
-			FVector(.0f, .0f, -90.0f),
-			OwnerRelativeTransform.GetScale3D()
-		);
-		ShowMagic(StaffOwner, SpellEffectTransform);
-		IsStaffEquiped = true;
+	if (!IsCasting) {
+		this->SetStaffVisibility(!IsStaffEquiped);
+		if (!IsStaffEquiped) {
+			EquippingStaff(StaffOwner);
+			FTransform OwnerRelativeTransform = StaffOwner->GetRootComponent()->GetRelativeTransform();
+			FTransform SpellEffectTransform = FTransform(
+				OwnerRelativeTransform.GetRotation(),
+				FVector(.0f, .0f, -90.0f),
+				OwnerRelativeTransform.GetScale3D()
+			);
+			ShowMagic(StaffOwner, SpellEffectTransform);
+			IsStaffEquiped = true;
+		}
+		else IsStaffEquiped = false;
+		StaffOwner->CindyAnimator->AttackEvent(IsStaffEquiped);
 	}
-	else IsStaffEquiped = false;
-	StaffOwner->CindyAnimator->AttackEvent(IsStaffEquiped);
+	else IsCasting = false;
 }
 
 void AMagicalStaff::DestroyEffect_Implementation(ACindyCharacter* StaffOwner) {
@@ -55,6 +67,7 @@ void AMagicalStaff::Attack_Implementation(ACindyCharacter* StaffOwner, UAnimMont
 		StopMontageDelegate.BindUFunction(this, "StopMontage");
 		AnimInstance->OnMontageBlendingOut.AddUnique(StopMontageDelegate);
 		StaffOwner->PlayAnimMontage(AnimMontage);
+		StaffTrigger->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 		IsAttacking = true;
 	}
 	else {
@@ -62,18 +75,16 @@ void AMagicalStaff::Attack_Implementation(ACindyCharacter* StaffOwner, UAnimMont
 	}
 }
 
-void AMagicalStaff::CastSpell_Implementation(ACindyCharacter* StaffOwner, ESpellType SpellType, float ManaNeeded, float Cooldown) {
-	if (!IsStaffEquiped) return;
-	if (!IsCasting) {
-		if (!OnCooldown) {
+void AMagicalStaff::CastSpell_Implementation(ACindyCharacter* StaffOwner, ESpellType SpellType) {
+	if (IsStaffEquiped) {
+		IsCasting = (!IsCasting) ? true : false;
+		if (IsCasting && !OnCooldown) {
 			UAnimInstance* AnimInstance = StaffOwner->GetMesh()->GetAnimInstance();
 			if (!AnimInstance->IsAnyMontagePlaying()) {
 				StaffOwner->StopMovement(true);
 			}
 		}
-		IsCasting = true;
-	}
-	else IsCasting = false;
+	} else IsCasting = false;
 }
 
 void AMagicalStaff::ToggleStaff(ACindyCharacter* StaffOwner) {

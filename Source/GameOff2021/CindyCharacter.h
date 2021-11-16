@@ -22,6 +22,7 @@ public:
 	UChildActorComponent* MagicCircle;
 
 	class UCharacterMovementComponent* CharacterMovement;
+	UPROPERTY(BlueprintReadOnly)
 	class UCindyAnimator* CindyAnimator;
 
 	UFUNCTION(BlueprintImplementableEvent)

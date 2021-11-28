@@ -14,4 +14,5 @@ class GAMEOFF2021_API AAdventureGameMode : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
 };

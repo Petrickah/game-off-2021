@@ -1,4 +1,6 @@
 # game-off-2021
+
+[Cover](./Images/Cover.png)
 A video game about bugs and a sorceress that must save the day
 
 ## **Description**

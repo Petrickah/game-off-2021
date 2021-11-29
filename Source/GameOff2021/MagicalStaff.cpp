@@ -3,7 +3,7 @@
 
 #include "MagicalStaff.h"
 #include "CindyAnimator.h"
-#include "Components/SphereComponent.h"
+#include "Components/CapsuleComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 
 // Sets default values
@@ -14,14 +14,6 @@ AMagicalStaff::AMagicalStaff()
 
 	StaffMesh = CreateDefaultSubobject<USkeletalMeshComponent>(FName("StaffMesh"));
 	StaffMesh->AttachToComponent(RootComponent, FAttachmentTransformRules(EAttachmentRule::KeepRelative, false));
-
-	StaffTrigger = CreateDefaultSubobject<USphereComponent>(FName("SphereCollision"));
-	StaffTrigger->AttachToComponent(StaffMesh, FAttachmentTransformRules(EAttachmentRule::KeepRelative, false));
-
-	StaffTrigger->SetSphereRadius(32.0f);
-	StaffTrigger->SetCollisionProfileName(FName("OverlapAllDynamic"));
-	StaffTrigger->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	StaffTrigger->SetRelativeLocation(FVector(0.0f, 0.0f, 52.5f));
 }
 
 void AMagicalStaff::SetStaffVisibility(bool Visibility) {
@@ -67,7 +59,6 @@ void AMagicalStaff::Attack_Implementation(ACindyCharacter* StaffOwner, UAnimMont
 		StopMontageDelegate.BindUFunction(this, "StopMontage");
 		AnimInstance->OnMontageBlendingOut.AddUnique(StopMontageDelegate);
 		StaffOwner->PlayAnimMontage(AnimMontage);
-		StaffTrigger->SetCollisionEnabled(ECollisionEnabled::QueryOnly);
 		IsAttacking = true;
 	}
 	else {

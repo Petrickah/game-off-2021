@@ -19,7 +19,28 @@ void ACindyPlayerController::BeginPlay() {
 
 void ACindyPlayerController::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
-	PlayerUIWidget->RegenerateMana(ManaRegenerationRate * DeltaTime);
+	if (GetPawn() != nullptr) {
+		PlayerUIWidget->RegenerateMana(ManaRegenerationRate * DeltaTime);
+		if (bHealthOnCooldown) {
+			fHealthCooldownTimer -= DeltaTime;
+			if (fHealthCooldownTimer <= 0) {
+				fHealthCooldownTimer = 0;
+				bHealthOnCooldown = false;
+			}
+		}
+		else {
+			PlayerUIWidget->RegenerateHealth(HealthRegenerationRate * DeltaTime);
+		}
+
+		if (PlayerUIWidget->CurrentHealth <= 0.1f) {
+			ACindyCharacter* ControlledPawn = Cast<ACindyCharacter>(GetPawn());
+			if (ControlledPawn != nullptr)
+				ControlledPawn->OnDeath();
+		}
+	}
+	else {
+		PlayerStart->K2_OnReset();
+	}
 }
 
 bool ACindyPlayerController::ReadMana(float& ManaPool) {
@@ -38,4 +59,15 @@ void ACindyPlayerController::UpdateMana(float ManaRemaining) {
 	else {
 		PlayerUIWidget->RegenerateMana(+1.0f * ManaUsed);
 	}
+}
+
+void ACindyPlayerController::TakeDamage(float Damage) {
+	PlayerUIWidget->TakeDamage(Damage);
+	bHealthOnCooldown = true;
+	fHealthCooldownTimer = HealthRegenerationCooldown;
+}
+
+void ACindyPlayerController::UpdateHealth(float Health) {
+	if(PlayerUIWidget != nullptr)
+		PlayerUIWidget->RegenerateHealth(Health);
 }

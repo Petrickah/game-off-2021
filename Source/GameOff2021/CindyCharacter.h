@@ -25,6 +25,15 @@ public:
 	UPROPERTY(BlueprintReadOnly)
 	class UCindyAnimator* CindyAnimator;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	bool IsDeath = false;
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnDeath();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void OnRespawn(class APlayerStart* PlayerStart);
+
 	UFUNCTION(BlueprintImplementableEvent)
 	void Walk(bool IsWalking);
 

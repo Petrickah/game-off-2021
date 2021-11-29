@@ -1,7 +1,16 @@
 # game-off-2021
- A video game about bugs and a sorceress that must save the day
+A video game about bugs and a sorceress that must save the day
 
- Licensed Assets used:
+## **Description**
+
+Cindy's Adventures is an adventure game where the player (Cynthia Stewart) is a mighty sorceress whom can cast elemental spells like water (nature), fire, lightning or arcane (the ultimate). She's an adventurer originating from Medieval England who finds any situation a challenge.  Spiders in Australia is the chapter in which you must adventure in a forgotten rural area in Australia and survive the spiders attacks. Anywhere you go there is spiders who spawns and comes after you.
+
+## **Controls**
+By casting spells (water, fire, lightning or arcane) with your staff (equipped with your Q or right arrow on controllers) and using any numeric number (1, 2, 3, or 4) or (A, B, X, Y on controllers) you can deal damage to spiders. Basic attacks (left / right click or trigger on controllers) with your staff deals damage too. To move around and survive use your mouse and keyboard (W, A, S, D) or controller sticks. You can sprint or crouch and jump if necessary by using Shift or Control or Space (arrow down or right / left bumper on controller).
+
+You die if your not careful and the spiders are waiting for you when you re-spawn.
+ 
+## **Licensed Assets used:**
 
  Hair Material (MizuGames): https://forums.unrealengine.com/t/free-hair-material/24782
 

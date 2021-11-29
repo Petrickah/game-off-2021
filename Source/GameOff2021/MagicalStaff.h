@@ -20,9 +20,6 @@ public:
 	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
 	class USkeletalMeshComponent* StaffMesh;
 
-	UPROPERTY(BlueprintReadWrite, VisibleAnywhere)
-	class USphereComponent* StaffTrigger;
-
 protected:
 
 	UPROPERTY(BLueprintReadWrite, VisibleAnywhere)

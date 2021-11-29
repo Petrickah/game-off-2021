@@ -23,6 +23,9 @@ public:
 	void WalkEvent();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void DeathEvent(class APlayerStart* playerStart);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void JumpEvent(bool IsFalling);
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)

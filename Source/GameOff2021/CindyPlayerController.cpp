@@ -61,10 +61,11 @@ void ACindyPlayerController::UpdateMana(float ManaRemaining) {
 	}
 }
 
-void ACindyPlayerController::TakeDamage(float Damage) {
-	PlayerUIWidget->TakeDamage(Damage);
+float ACindyPlayerController::TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) {
+	PlayerUIWidget->TakeDamage(DamageAmount);
 	bHealthOnCooldown = true;
 	fHealthCooldownTimer = HealthRegenerationCooldown;
+	return DamageAmount;
 }
 
 void ACindyPlayerController::UpdateHealth(float Health) {

@@ -2224,6 +2224,14 @@
 			"Type": "DynamicLibrary"
 		},
 		{
+			"Path": "$(EngineDir)/Binaries/Win64/Linux/UnrealEditor-LinuxTargetPlatform.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/LinuxAArch64/UnrealEditor-LinuxAArch64TargetPlatform.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
 			"Path": "$(EngineDir)/Binaries/Win64/UnrealEditor-Engine.dll",
 			"Type": "DynamicLibrary"
 		},
@@ -2777,6 +2785,14 @@
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/Lumin/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/Linux/UnrealEditor.modules",
+			"Type": "RequiredResource"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/LinuxAArch64/UnrealEditor.modules",
 			"Type": "RequiredResource"
 		}
 	],

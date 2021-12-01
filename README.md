@@ -1,4 +1,6 @@
 # game-off-2021
+
+![Cover](./Images/Cover.png)
 A video game about bugs and a sorceress that must save the day
 
 ## **Description**
@@ -21,3 +23,7 @@ You die if your not careful and the spiders are waiting for you when you re-spaw
  Spell PowerUp (Basic Pickup VFX Set / Suppart): https://www.unrealengine.com/marketplace/en-US/product/basic-pickups-vfx-set-niagara
 
  Spell Effects (FX Variety Pack / Kakky): https://www.unrealengine.com/marketplace/en-US/product/a36bac8b05004e999dd4b1d332501f49
+ 
+ Rural Australia (Andrew Svanberg Hamilton): https://www.unrealengine.com/marketplace/en-US/product/rural-australia
+ 
+ Free Sounds from https://www.freesound.org

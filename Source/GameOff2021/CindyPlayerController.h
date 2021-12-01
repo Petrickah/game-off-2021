@@ -48,9 +48,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void UpdateMana(float ManaRemaining);
-
+	
 	UFUNCTION(BlueprintCallable)
-	void TakeDamage(float Damage);
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 
 	UFUNCTION(BlueprintCallable)
 	void UpdateHealth(float Health);

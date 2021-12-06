@@ -1,4 +1,4 @@
-# game-off-2021
+# Cindy's Adventures - Spiders in Australia
 
 ![Cover](./Images/Cover.png)
 A video game about bugs and a sorceress that must save the day
